@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'LocationKitSample' do
-  pod 'LocationKit', '~> 2.0.0'
+  pod 'LocationKit', '~> 2.2.0'
 end
 
 target 'LocationKitSampleTests' do

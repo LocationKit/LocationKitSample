@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let locationKit = LocationKit.sharedInstance()
-        locationKit.startWithApiToken("0f9d6478b4124574", andDelegate: self.locationManager)
+        locationKit.startWithApiToken("0f9d6478b4124574", delegate: self.locationManager)
         return true
     }
 
