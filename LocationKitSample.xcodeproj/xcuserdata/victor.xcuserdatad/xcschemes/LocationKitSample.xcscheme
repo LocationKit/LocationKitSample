@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6DA1F5635CB2B480CE2B630FDA65596"
-               BuildableName = "libPods-LocationKitSample.a"
-               BlueprintName = "Pods-LocationKitSample"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "842AF80A1B61377600054D91"
+               BuildableName = "LocationKitSample.app"
+               BlueprintName = "LocationKitSample"
+               ReferencedContainer = "container:LocationKitSample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "842AF81F1B61377600054D91"
+               BuildableName = "LocationKitSampleTests.xctest"
+               BlueprintName = "LocationKitSampleTests"
+               ReferencedContainer = "container:LocationKitSample.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "842AF80A1B61377600054D91"
+            BuildableName = "LocationKitSample.app"
+            BlueprintName = "LocationKitSample"
+            ReferencedContainer = "container:LocationKitSample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E6DA1F5635CB2B480CE2B630FDA65596"
-            BuildableName = "libPods-LocationKitSample.a"
-            BlueprintName = "Pods-LocationKitSample"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "842AF80A1B61377600054D91"
+            BuildableName = "LocationKitSample.app"
+            BlueprintName = "LocationKitSample"
+            ReferencedContainer = "container:LocationKitSample.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,6 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "842AF80A1B61377600054D91"
+            BuildableName = "LocationKitSample.app"
+            BlueprintName = "LocationKitSample"
+            ReferencedContainer = "container:LocationKitSample.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

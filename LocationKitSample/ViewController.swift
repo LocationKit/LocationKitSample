@@ -13,13 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
 
     @IBAction func getLocation(sender: AnyObject) {
-        println("Fetching location...")
+        print("Fetching location...")
         let locationKit = LocationKit.sharedInstance()
         locationKit.getCurrentLocationWithHandler { (location:CLLocation!, error:NSError!) -> Void in
             if let loc = location {
                 self.locationLabel.text = "(\(loc.coordinate.latitude), \(loc.coordinate.longitude))"
             } else {
-                println("got a nil location")
+                print("got a nil location")
             }
         }
     }

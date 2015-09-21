@@ -11,6 +11,6 @@ import Foundation
 class LocationManager: NSObject, LocationKitDelegate {
     
     func locationKit(locationKit: LocationKit!, didUpdateLocation location: CLLocation!) {
-        println("Delegate got a location: (\(location.coordinate.latitude), \(location.coordinate.longitude))")
+        print("Delegate got a location: (\(location.coordinate.latitude), \(location.coordinate.longitude))")
     }
 }
