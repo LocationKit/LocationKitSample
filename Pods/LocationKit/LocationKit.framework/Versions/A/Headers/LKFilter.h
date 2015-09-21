@@ -10,5 +10,6 @@
 
 @property(nonatomic, copy) NSString *venueCategory;
 @property(nonatomic, copy) NSString *venueName;
+@property(nonatomic) double radius;
 
 @end

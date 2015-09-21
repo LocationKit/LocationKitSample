@@ -10,6 +10,8 @@
 #import "LKSearchRequest.h"
 #import "LKSetting.h"
 #import "LKFilter.h"
+#import "LKGeofence.h"
+#import "LKPerson.h"
 
 UIKIT_EXTERN NSString *const LKUserValueIdentifier;
 UIKIT_EXTERN NSString *const LKUserValueName;
@@ -42,6 +44,7 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 @protocol LocationKitDelegate;
 
 
+
 @interface LocationKit : NSObject
 
 @property(nonatomic, readonly) BOOL isRunning;
@@ -51,6 +54,10 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 @property(nonatomic, copy) void (^getCurrentLocationCallback)(CLLocation *, NSError *);
 
 
+@property(nonatomic) NSNumber *debugMode;
+
+@property(nonatomic, strong) NSNumber *debugMoved;
+
 + (LocationKit *)sharedInstance;
 
 - (instancetype)init __attribute__((unavailable("init not available")));
@@ -59,6 +66,8 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 - (void)startWithApiToken:(NSString *)token delegate:(id <LocationKitDelegate>)delegate;
 
 - (void)startWithApiToken:(NSString *)token delegate:(id <LocationKitDelegate>)delegate options:(NSDictionary *)options;
+
+- (void)handleAppLaunch:(NSString *)token delegate:(id <LocationKitDelegate>)delegate;
 
 
 - (void)getCurrentPlaceWithHandler:(void (^)(LKPlace *place, NSError *error))handler;
@@ -93,11 +102,9 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 - (void)applyOperationMode:(LKSetting *)setting;
 
 
-
 - (void)pause;
 
 - (NSError *)resume;
-
 
 @end
 
@@ -116,4 +123,9 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 
 - (void)locationKit:(LocationKit *)locationKit willChangeActivityMode:(LKActivityMode)mode;
 
+- (void)locationKit:(LocationKit *)locationKit changeRegion:(NSString *)obj;
+
+- (void)locationKit:(LocationKit *)locationKit didEnterRegion:(LKGeofence *)region;
+
+- (void)locationKit:(LocationKit *)locationKit didExitRegion:(LKGeofence *)region;
 @end
