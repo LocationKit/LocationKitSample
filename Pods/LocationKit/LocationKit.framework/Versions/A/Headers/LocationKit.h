@@ -9,8 +9,7 @@
 #import "LKVisit.h"
 #import "LKSearchRequest.h"
 #import "LKSetting.h"
-#import "LKFilter.h"
-#import "LKGeofence.h"
+#import "LKVisitCriteria.h"
 #import "LKPerson.h"
 
 UIKIT_EXTERN NSString *const LKUserValueIdentifier;
@@ -27,8 +26,6 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 UIKIT_EXTERN NSString *const LKOptionWhenInUseOnly;
 UIKIT_EXTERN NSString *const LKOptionUseiOSMotionActivity;
 UIKIT_EXTERN NSString *const LKOptionTimedUpdatesInterval;
-UIKIT_EXTERN NSString *const LKOptionFilter;
-
 
 
 typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
@@ -44,12 +41,13 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 @protocol LocationKitDelegate;
 
 
-
 @interface LocationKit : NSObject
 
 @property(nonatomic, readonly) BOOL isRunning;
 
 @property(nonatomic, readonly) NSString *deviceId;
+
+@property(nonatomic, readonly) NSString *version;
 
 @property(nonatomic, copy) void (^getCurrentLocationCallback)(CLLocation *, NSError *);
 
@@ -89,6 +87,8 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 
 - (void)getWork:(void (^)(LKAddress *, NSError *))handler;
 
+- (void)optOut:(void (^)( NSError *))handler;
+
 /*
  *  updateUserValues:
  *
@@ -99,7 +99,11 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 - (void)updateUserValues:(NSDictionary *)userValues;
 
 
-- (void)applyOperationMode:(LKSetting *)setting;
+- (void)setOperationMode:(LKSetting *)setting;
+
+- (NSArray *)visitCriteria;
+
+- (void)setVisitCriteria:(NSArray *)visitCriteria;
 
 
 - (void)pause;
@@ -125,7 +129,4 @@ typedef NS_OPTIONS(NSUInteger, LKActivityMode) {
 
 - (void)locationKit:(LocationKit *)locationKit changeRegion:(NSString *)obj;
 
-- (void)locationKit:(LocationKit *)locationKit didEnterRegion:(LKGeofence *)region;
-
-- (void)locationKit:(LocationKit *)locationKit didExitRegion:(LKGeofence *)region;
 @end
